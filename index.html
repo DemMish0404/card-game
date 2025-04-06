@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<script src="./script.js" type="module"></script>
+
+
+<style>
+
+ body{
+   padding: 25px;
+   
+
+   display: grid;
+   gap: 1rem;
+   grid-template-rows: 7rem 2rem 7rem;
+   grid-template-columns: repeat(2 , 4rem);
+   justify-content: center;
+   align-items: center;
+
+   cursor: pointer;
+
+ }
+
+ .red-color{
+   color: red;
+ }
+ .black-color{
+   color: black;
+ }
+
+ .card-component{
+   position: relative;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   border: 1px solid black;
+   border-radius: 5px;
+   font-size: 2rem;
+
+   user-select: none;
+
+   
+ }
+
+ .computer-how-many-cards-left {
+   
+   background-color: red;
+   
+}
+.how-many-cards-left {
+   color: white;
+   
+}
+.computer-current-card {
+   
+}
+.current-card {
+   
+}
+
+.current-card::after,.current-card::before {
+   position: absolute;
+   content: attr(data-card-value);
+   font-size: .75rem;
+}
+.current-card::after{
+   inset-inline-start: 0.5rem;
+   inset-block-start: 0.5rem;
+}
+.current-card::before{
+   inset-inline-end: 0.5rem;
+   inset-block-end: 0.5rem;
+   rotate: 180deg;
+}
+
+
+.lose-win-draw {
+ grid-column: span 2;
+
+ display: flex;
+   justify-content: center;
+   align-items: center;
+
+   font-size: 1.5rem;
+
+}
+
+.player-how-many-cards-left {
+   background-color: green;
+}
+.player-current-card {
+}
+</style>
+
+
+<body>
+   <div class="computer-how-many-cards-left how-many-cards-left card-component">26</div>
+   <div class="computer-current-card current-card card-component" data-card-value="" ></div>
+   <div class="lose-win-draw">draw</div>
+   <div class="player-how-many-cards-left how-many-cards-left card-component">26</div>
+   <div class="player-current-card current-card card-component"  data-card-value="" ></div>
+
+</body>
+
+</html>
